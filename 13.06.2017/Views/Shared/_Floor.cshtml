@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from themazine.com/html/right-flooring/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2017 15:07:50 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="~/Public/images/fav-icon/icon.png">
+
+    
+    <!-- Main style sheet -->
+    @Styles.Render("~/Public/css/style.css")
+    <!-- responsive style sheet -->
+    @Styles.Render("~/Public/css/responsive.css")
+
+
+</head>
+
+<body>
+    <div class="main-page-wrapper">
+
+
+
+        <!--
+        =============================================
+            Theme Header
+        ==============================================
+        -->
+        <header class="theme-main-header bg-transparent">
+            <!-- ======================= Theme Main Menu ====================== -->
+            <div class="container">
+                <div class="theme-main-menu clearfix">
+                    <div class="logo float-left">
+                    <a href="/">
+                        <img src="~/Public/images/logo/logo.png" alt="" title="@ViewBag.logoTitle">
+                    </a>
+                    </div>
+                    <!-- ============== Menu Warpper ================ -->
+                    <nav id="mega-menu-holder" class="menuzord float-right">
+                        <ul class="menuzord-menu clearfix">
+                            <li class="active">
+                                @Html.ActionLink("Ana Səhifə", "index", "home")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Gördüyümüz işlər", "index", "projects")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Xidmətlər", "services", "projects")
+                                <ul class="dropdown">
+                                    @foreach (KeyValuePair<string,string> service in ViewBag.Services)
+                                    {
+                                        <li>
+                                            @Html.ActionLink(service.Key, service.Value, "projects")
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Haqqımızda", "About", "projects")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Xəbərlər", "News", "projects")
+                            </li>
+                            <li class="last">
+                                @Html.ActionLink("Əlaqə", "ContactUs", "projects")
+                            </li>
+                        </ul>
+                    </nav> <!-- /#mega-menu-holder -->
+                </div> <!-- /.theme-main-menu -->
+            </div> <!-- /.container -->
+        </header>
+
+        @RenderBody()
+       
+
+                
+        <!--
+        =============================================
+            Bottom Banner
+        ==============================================
+        -->
+        <div class="bottom-banner">
+            <div class="container">
+                <ul class="row">
+                    <li>
+                        <div>
+                            <i class="flaticon-technology"></i>
+                            <h6>Contact info</h6>
+                            <p>+88 01682648101 <br>rightflooring@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="#" class="tran3s">
+                                <h6>Request for a Quote</h6>
+                                <p>Feel free talk to us</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="flaticon-location-1"></i>
+                            <h6>Location</h6>
+                            <p>San Francisco, area road, <br>Madison Ave, New York, US</p>
+                        </div>
+                    </li>
+                </ul>
+            </div> <!-- /.container -->
+        </div> <!-- /.bottom-banner -->
+        <!--
+        =============================================
+            Footer
+        ==============================================
+        -->
+        <footer>
+            <div class="container">
+                <div class="top-footer row">
+                    <div class="col-md-5 col-sm-8 col-xs-12 footer-logo">
+                        <a href="#"><img src="~/Public/images/logo/logo.png" alt="Logo"></a>
+                        <p>Right Flooring has developed not only the best hardwood floors on the market, but also the healthiest and most sustainable. Choose your Mercier hardwood floor from among more than 2,000 possibilities to add style and character to your home.</p>
+                        <ul>
+                            <li><a href="#" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="tran3s"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div> <!-- /.footer-logo -->
+
+                    <div class="col-md-3 col-sm-4 col-xs-12 footer-list">
+                        <h6>FLOORING PRODUCTS</h6>
+                        <ul>
+                            <li><a href="index.html" class="tran3s">Carpet</a></li>
+                            <li><a href="#" class="tran3s">Hardwood</a></li>
+                            <li><a href="#" class="tran3s">Tile</a></li>
+                            <li><a href="faq.html" class="tran3s">Laminate</a></li>
+                            <li><a href="about-us.html" class="tran3s">Luxury Vinyl</a></li>
+                            <li><a href="blog-grid.html" class="tran3s">Rugs</a></li>
+                        </ul>
+                    </div> <!-- /.footer-list -->
+
+                    <div class="col-md-4 col-xs-12 newsletter">
+                        <h6>Newsletter</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <button class="tran3 p-bg-color theme-button hvr-float-shadow">SUBSCRIBE  Now</button>
+                        </form>
+                    </div> <!-- /.newsletter -->
+                </div> <!-- /.top-footer -->
+            </div> <!-- /.container -->
+
+            <div class="bottom-footer">
+                <div class="container">
+                    <p class="float-left">Copyright &copy; 2017 <a href="#" class="tran3s p-color">Right flooring</a> Template by <a href="http://themeforest.net/user/themazine/portfolio" class="tran3s p-color" target="_blank">Themazine</a></p>
+                    <ul class="float-right">
+                        <li><a href="about-us-v1.html" class="tran3s">About</a></li>
+                        <li>|</li>
+                        <li><a href="#" class="tran3s">Employment</a></li>
+                        <li>|</li>
+                        <li><a href="#" class="tran3s">Internet Selling Policy</a></li>
+                        <li>|</li>
+                        <li><a href="contact-us.html" class="tran3s">Contact</a></li>
+                    </ul>
+                </div> <!-- /.container -->
+            </div> <!-- /.bottom-footer -->
+        </footer>
+
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top tran3s p-bg-color">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
+
+
+
+
+        <!-- Js File_________________________________ -->
+        <!-- j Query -->
+        @Scripts.Render("~/Public/vendor/jquery.2.2.3.min.js")
+
+        <!-- Bootstrap JS -->
+        @Scripts.Render("~/Public/vendor/bootstrap/bootstrap.min.js")
+        <!-- Bootstrap Select JS -->
+        @Scripts.Render("~/Public/vendor/bootstrap-select/dist/js/bootstrap-select.js")
+        <!-- Vendor js _________ -->
+        <!-- revolution -->
+        @Scripts.Render("~/Public/vendor/revolution/jquery.themepunch.tools.min.js")
+        @Scripts.Render("~/Public/vendor/revolution/jquery.themepunch.revolution.min.js")
+        @Scripts.Render("~/Public/vendor/revolution/revolution.extension.slideanims.min.js")
+        @Scripts.Render("~/Public/vendor/revolution/revolution.extension.layeranimation.min.js")
+        @Scripts.Render("~/Public/vendor/revolution/revolution.extension.navigation.min.js")
+        @Scripts.Render("~/Public/vendor/revolution/revolution.extension.kenburn.min.js")
+        <!-- Mega menu  -->
+        @Scripts.Render("~/Public/vendor/Menuzord/js/menuzord.js")
+        <!-- fancy box -->
+        @Scripts.Render("~/Public/vendor/fancy-box/jquery.fancybox.pack.js")
+        <!-- owl.carousel -->
+        @Scripts.Render("~/Public/vendor/owl-carousel/owl.carousel.min.js")
+        <!-- js count to -->
+        @Scripts.Render("~/Public/vendor/jquery.appear.js")
+        @Scripts.Render("~/Public/vendor/jquery.countTo.js")
+        <!-- MixitUp -->
+        @Scripts.Render("~/Public/vendor/jquery.mixitup.min.js")
+
+
+        <!-- Theme js -->
+        @Scripts.Render("~/Public/js/theme.js")
+
+    </div> <!-- /.main-page-wrapper -->
+</body>
+
+<!-- Mirrored from themazine.com/html/right-flooring/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2017 15:10:16 GMT -->
+</html>
